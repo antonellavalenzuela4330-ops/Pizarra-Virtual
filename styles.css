@@ -11,7 +11,7 @@ body {
     overflow: hidden;
 }
 
-/* Header */
+/* Header - Exactamente como en las imágenes */
 .header {
     background-color: #4a5568;
     color: white;
@@ -39,12 +39,13 @@ body {
 .menu-btn, .save-btn, .tool-btn {
     background: none;
     border: none;
-    color: white;
-    font-size: 18px;
     cursor: pointer;
     padding: 8px;
     border-radius: 4px;
     transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu-btn:hover, .save-btn:hover, .tool-btn:hover {
@@ -55,9 +56,16 @@ body {
     background-color: #2d3748;
 }
 
+.icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1); /* Hace las imágenes blancas */
+}
+
 .logo {
     font-weight: bold;
     font-size: 18px;
+    color: white;
 }
 
 .project-name {
@@ -65,7 +73,7 @@ body {
     font-size: 14px;
 }
 
-/* Sub-header */
+/* Sub-header - Exactamente como en las imágenes */
 .sub-header {
     background-color: #718096;
     padding: 10px 20px;
@@ -74,51 +82,19 @@ body {
     min-height: 50px;
 }
 
-.sub-header.hidden {
-    display: none;
-}
-
-.tool-options {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.option-group {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.option-group label {
+.options-title {
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
 }
 
-.option-group input, .option-group select {
-    padding: 4px 8px;
-    border: 1px solid #a0aec0;
-    border-radius: 4px;
-    background-color: white;
-}
-
-.color-picker {
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Sidebar */
+/* Sidebar - Exactamente como en las imágenes */
 .sidebar {
     position: fixed;
     left: -250px;
-    top: 60px;
+    top: 110px; /* Debajo del header y sub-header */
     width: 250px;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 110px);
     background-color: #e2e8f0;
     transition: left 0.3s ease;
     z-index: 999;
@@ -171,17 +147,19 @@ body {
     cursor: pointer;
     transition: background-color 0.2s;
     border: 1px solid #e2e8f0;
+    color: #2d3748;
+    font-size: 14px;
 }
 
 .project-item:hover {
     background-color: #f7fafc;
 }
 
-/* Main content */
+/* Main content - Exactamente como en las imágenes */
 .main-content {
     margin-left: 0;
-    margin-top: 60px;
-    height: calc(100vh - 60px);
+    margin-top: 110px; /* Debajo del header y sub-header */
+    height: calc(100vh - 110px);
     position: relative;
     background-color: #f7fafc;
     transition: margin-left 0.3s ease;
@@ -206,16 +184,6 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     cursor: crosshair;
-}
-
-.canvas-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 10;
 }
 
 .help-btn {
@@ -385,44 +353,6 @@ body {
     background-color: #3182ce;
 }
 
-/* Elementos interactivos en el canvas */
-.canvas-element {
-    position: absolute;
-    border: 2px solid transparent;
-    cursor: move;
-    user-select: none;
-}
-
-.canvas-element.selected {
-    border-color: #4299e1;
-}
-
-.canvas-element .resize-handle {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: #4299e1;
-    border: 1px solid white;
-    border-radius: 50%;
-}
-
-.canvas-element .rotate-handle {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 12px;
-    height: 12px;
-    background-color: #4299e1;
-    border: 1px solid white;
-    border-radius: 50%;
-    cursor: grab;
-}
-
-.canvas-element .rotate-handle:active {
-    cursor: grabbing;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     .header {
@@ -437,9 +367,9 @@ body {
         gap: 5px;
     }
     
-    .tool-btn {
-        font-size: 16px;
-        padding: 6px;
+    .icon {
+        width: 16px;
+        height: 16px;
     }
     
     .sidebar {

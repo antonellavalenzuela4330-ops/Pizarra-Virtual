@@ -10,39 +10,35 @@
     <!-- Header -->
     <header class="header">
         <div class="header-left">
-            <button class="menu-btn" id="menuBtn">☰</button>
+            <button class="menu-btn" id="menuBtn">
+                <img src="menu.png" alt="Menú" class="icon">
+            </button>
             <span class="logo">LOGO</span>
-            <button class="save-btn" id="saveBtn">💾</button>
+            <button class="save-btn" id="saveBtn">
+                <img src="disquete.png" alt="Guardar" class="icon">
+            </button>
             <span class="project-name" id="projectName">Nombre proyecto</span>
         </div>
         <div class="header-right">
-            <button class="tool-btn" id="imageTool" title="Imagen">🖼️</button>
-            <button class="tool-btn" id="textTool" title="Texto">T</button>
-            <button class="tool-btn" id="pencilTool" title="Lápiz">✏️</button>
-            <button class="tool-btn" id="documentTool" title="Documento">📄</button>
+            <button class="tool-btn" id="imageTool" title="Imagen">
+                <img src="imagen.png" alt="Imagen" class="icon">
+            </button>
+            <button class="tool-btn" id="textTool" title="Texto">
+                <img src="texto.png" alt="Texto" class="icon">
+            </button>
+            <button class="tool-btn active" id="pencilTool" title="Lápiz">
+                <img src="cepillo.png" alt="Lápiz" class="icon">
+            </button>
+            <button class="tool-btn" id="documentTool" title="Documento">
+                <img src="documento.png" alt="Documento" class="icon">
+            </button>
         </div>
     </header>
 
     <!-- Sub-header para opciones de herramientas -->
     <div class="sub-header" id="subHeader">
         <div class="tool-options" id="toolOptions">
-            <div class="option-group">
-                <label>Grosor:</label>
-                <input type="range" id="pencilSize" min="1" max="20" value="3">
-                <span id="pencilSizeValue">3px</span>
-            </div>
-            <div class="option-group">
-                <label>Color:</label>
-                <input type="color" id="pencilColor" value="#000000">
-            </div>
-            <div class="option-group">
-                <label>Tipo:</label>
-                <select id="pencilType">
-                    <option value="normal">Normal</option>
-                    <option value="marker">Marcador</option>
-                    <option value="brush">Pincel</option>
-                </select>
-            </div>
+            <span class="options-title">Opciones Lapiz</span>
         </div>
     </div>
 
@@ -53,7 +49,14 @@
             <div class="projects-section">
                 <h3>Tus Proyectos</h3>
                 <div class="projects-list" id="projectsList">
-                    <!-- Los proyectos se cargarán dinámicamente -->
+                    <div class="project-item">Nombre proyecto</div>
+                    <div class="project-item">Nombre proyecto</div>
+                    <div class="project-item">Nombre proyecto</div>
+                    <div class="project-item">Nombre proyecto</div>
+                    <div class="project-item">Nombre proyecto</div>
+                    <div class="project-item">Nombre proyecto</div>
+                    <div class="project-item">Nombre proyecto</div>
+                    <div class="project-item">Nombre proyecto</div>
                 </div>
             </div>
         </div>
@@ -63,7 +66,6 @@
     <main class="main-content">
         <div class="canvas-container">
             <canvas id="mainCanvas" width="1200" height="800"></canvas>
-            <div class="canvas-overlay" id="canvasOverlay"></div>
         </div>
         <button class="help-btn" id="helpBtn">?</button>
     </main>
@@ -118,6 +120,5 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="advanced-features.js"></script>
 </body>
 </html>
