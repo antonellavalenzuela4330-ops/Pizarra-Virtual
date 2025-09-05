@@ -26,7 +26,23 @@
     <!-- Sub-header para opciones de herramientas -->
     <div class="sub-header" id="subHeader">
         <div class="tool-options" id="toolOptions">
-            <!-- Las opciones se cargarán dinámicamente según la herramienta seleccionada -->
+            <div class="option-group">
+                <label>Grosor:</label>
+                <input type="range" id="pencilSize" min="1" max="20" value="3">
+                <span id="pencilSizeValue">3px</span>
+            </div>
+            <div class="option-group">
+                <label>Color:</label>
+                <input type="color" id="pencilColor" value="#000000">
+            </div>
+            <div class="option-group">
+                <label>Tipo:</label>
+                <select id="pencilType">
+                    <option value="normal">Normal</option>
+                    <option value="marker">Marcador</option>
+                    <option value="brush">Pincel</option>
+                </select>
+            </div>
         </div>
     </div>
 

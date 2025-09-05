@@ -37,6 +37,12 @@ class PizarraVirtual {
         this.setupEventListeners();
         this.initializeLayers();
         this.loadProjects();
+        
+        // Activar lápiz por defecto
+        this.setTool('pencil');
+        
+        // Configurar event listeners para las opciones del lápiz
+        this.setupInitialPencilListeners();
     }
     
     initializeCanvas() {
@@ -68,6 +74,32 @@ class PizarraVirtual {
                 elements: []
             }
         ];
+    }
+    
+    setupInitialPencilListeners() {
+        // Configurar event listeners para las opciones del lápiz que ya están en el HTML
+        const pencilSize = document.getElementById('pencilSize');
+        const pencilColor = document.getElementById('pencilColor');
+        const pencilType = document.getElementById('pencilType');
+        
+        if (pencilSize) {
+            pencilSize.addEventListener('input', (e) => {
+                this.toolConfig.pencil.size = e.target.value;
+                document.getElementById('pencilSizeValue').textContent = e.target.value + 'px';
+            });
+        }
+        
+        if (pencilColor) {
+            pencilColor.addEventListener('change', (e) => {
+                this.toolConfig.pencil.color = e.target.value;
+            });
+        }
+        
+        if (pencilType) {
+            pencilType.addEventListener('change', (e) => {
+                this.toolConfig.pencil.type = e.target.value;
+            });
+        }
     }
     
     setupEventListeners() {
@@ -123,7 +155,7 @@ class PizarraVirtual {
         const subHeader = document.getElementById('subHeader');
         const toolOptions = document.getElementById('toolOptions');
         
-        subHeader.classList.add('active');
+        subHeader.classList.remove('hidden');
         
         let optionsHTML = '';
         

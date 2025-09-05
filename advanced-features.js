@@ -20,6 +20,7 @@ class AdvancedFeatures {
     createLayerPanel() {
         const layerPanel = document.createElement('div');
         layerPanel.className = 'layer-panel';
+        layerPanel.style.display = 'none'; // Ocultar por defecto
         layerPanel.innerHTML = `
             <h3>Capas</h3>
             <div class="layers-list" id="layersList"></div>
@@ -320,6 +321,7 @@ class AdvancedFeatures {
     addShapeToolbar() {
         const shapeToolbar = document.createElement('div');
         shapeToolbar.className = 'shape-toolbar';
+        shapeToolbar.style.display = 'none'; // Ocultar por defecto
         shapeToolbar.innerHTML = `
             <button class="shape-btn" data-shape="rectangle">⬜</button>
             <button class="shape-btn" data-shape="circle">⭕</button>

@@ -69,13 +69,13 @@ body {
 .sub-header {
     background-color: #718096;
     padding: 10px 20px;
-    display: none;
+    display: flex;
     align-items: center;
     min-height: 50px;
 }
 
-.sub-header.active {
-    display: flex;
+.sub-header.hidden {
+    display: none;
 }
 
 .tool-options {
