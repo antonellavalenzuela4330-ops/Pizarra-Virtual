@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizarra Virtual</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-btn" id="menuBtn">☰</button>
+            <span class="logo">LOGO</span>
+            <button class="save-btn" id="saveBtn">💾</button>
+            <span class="project-name" id="projectName">Nombre proyecto</span>
+        </div>
+        <div class="header-right">
+            <button class="tool-btn" id="imageTool" title="Imagen">🖼️</button>
+            <button class="tool-btn" id="textTool" title="Texto">T</button>
+            <button class="tool-btn" id="pencilTool" title="Lápiz">✏️</button>
+            <button class="tool-btn" id="documentTool" title="Documento">📄</button>
+        </div>
+    </header>
+
+    <!-- Sub-header para opciones de herramientas -->
+    <div class="sub-header" id="subHeader">
+        <div class="tool-options" id="toolOptions">
+            <!-- Las opciones se cargarán dinámicamente según la herramienta seleccionada -->
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <button class="new-project-btn">+ Nuevo Proyecto</button>
+            <div class="projects-section">
+                <h3>Tus Proyectos</h3>
+                <div class="projects-list" id="projectsList">
+                    <!-- Los proyectos se cargarán dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="main-content">
+        <div class="canvas-container">
+            <canvas id="mainCanvas" width="1200" height="800"></canvas>
+            <div class="canvas-overlay" id="canvasOverlay"></div>
+        </div>
+        <button class="help-btn" id="helpBtn">?</button>
+    </main>
+
+    <!-- Modal para tutorial -->
+    <div class="modal" id="tutorialModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Tutorial</h2>
+                <button class="close-btn" id="closeTutorial">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="tutorial-card">
+                    <h3>Carrusel de Imágenes con texto incluido</h3>
+                    <p>Aquí puedes aprender a usar todas las herramientas de la pizarra virtual.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para documentos -->
+    <div class="modal" id="documentModal">
+        <div class="modal-content document-modal">
+            <div class="modal-header">
+                <h2>Documentos</h2>
+                <button class="close-btn" id="closeDocument">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="document-viewer" id="documentViewer">
+                    <input type="file" id="fileInput" accept=".pdf,.doc,.docx" style="display: none;">
+                    <button class="upload-btn" id="uploadBtn">Subir Documento</button>
+                    <div class="document-pages" id="documentPages">
+                        <!-- Las páginas del documento se mostrarán aquí -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para guardar -->
+    <div class="modal" id="saveModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Guardar Proyecto</h2>
+                <button class="close-btn" id="closeSave">×</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="projectNameInput" placeholder="Nombre del proyecto">
+                <button class="save-project-btn" id="saveProjectBtn">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="advanced-features.js"></script>
+</body>
+</html>
